@@ -4,4 +4,4 @@
 
 Running cat_count.py is done from bash using the following:
 
-==cat cats_txt.txt|./cat_count.py==
+'cat cats_txt.txt|./cat_count.py'
