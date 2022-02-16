@@ -24,17 +24,20 @@ for line in sys.stdin:
             elif re.match(r'\w+', word):
                 # use freqdist to count frequency of each word
                 fdist[word] += 1
-            elif re.match(r'[.,!?;]', word):
+            elif re.match(r"[.,!?;']", word):
                 fdist[word] += 1
             else:
                 continue
 
 # now that fdist holds all the values, loop thru and print
-# this did not print in frequency order but looked better than using most_common
 # for word in fdist.keys():
-#    times = fdist[word]
-#    print(" -- %s occurred %s times" % (word, times))
+for word in fdist.most_common(None):
+    times = fdist[word]
+    # print(" -- %s occurred %s times" % (word, times))
+    print(word)
 
-print(fdist.most_common(None))
+# Using None with most_common returns all of the words with counts
+# print(fdist.most_common(None))
 
+# print to see how many samples and outcomes there were
 print(fdist)
